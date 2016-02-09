@@ -1,0 +1,31 @@
+<input type="text" ng-model="filter_name" placeholder="Search by name ...">
+
+<table>
+	<thead>
+		<th>Product Name</th>
+		<th>Description</th>
+		<th>Quantity</th>
+		<th>Created Date</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="product in products | filter: filter_name | orderBy: 'created_at' | limitTo: 5 ">
+			<td>{{product.name}}</td>
+			<td>{{product.description}}</td>
+			<td>{{product.quantity}}</td>
+			<td>{{product.created_at | amDateFormat: 'MMMM Do, YYYY' }}</td>
+		</tr>
+	</tbody>
+</table>
+<a href="#/products">show all products...</a>
+
+<h3>Recent Orders</h3>
+<ul>
+	<li ng-repeat="order in orders | orderBy: '-created_at' | limitTo: 5 ">{{order.customer}} purchased {{order.quantity}} {{order.product}}... (<time am-time-ago="order.created_at"></time>)</li>
+</ul>
+<a href="#/orders">show all orders...</a>
+
+<h3>New Customers</h3>
+<ul>
+	<li ng-repeat="customer in customers | orderBy: '-created_at' | limitTo: 5 ">{{customer.name}} joined the store. (<time am-time-ago="customer.created_at"></time>)</li>
+</ul>
+<a href="#/customers">show all customers...</a>

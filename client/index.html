@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Store</title>
+
+	<!-- angular -->
+	<script type="text/javascript" src="/js/lib/angular-1.4.6/angular.js"></script>
+	<script type="text/javascript" src="/js/lib/angular-1.4.6/angular-route.js"></script>
+
+	<!-- momentJS (required for angular-moment) -->
+	<script src="js/lib/moment/moment.js"></script>
+
+	<!-- angular-moment -->
+	<script src="js/lib/angular-moment/angular-moment.js"></script>
+
+	<!-- angular app -->
+	<script src="js/app.js"></script>
+
+	<!-- factories and controllers -->
+	<script src="js/controllers/main_ctrl.js"></script>
+
+	<script src="js/factories/product_factory.js"></script>
+	<script src="js/controllers/products_ctrl.js"></script>
+
+	<script src="js/factories/customer_factory.js"></script>
+	<script src="js/controllers/customers_ctrl.js"></script>
+
+	<script src="js/factories/order_factory.js"></script>
+	<script src="js/controllers/orders_ctrl.js"></script>
+
+
+</head>
+<body>
+	<h1>Welcome to the Store!</h1>
+	<nav>
+		<a href="#/dashboard">Dashboard</a> |
+		<a href="#/products">Products</a> |
+		<a href="#/orders">Orders</a> |
+		<a href="#/customers">Customers</a>
+	</nav>
+	<div ng-view=""></div>
+</body>
+</html>
